@@ -46,6 +46,7 @@ public class RentalAppTests {
         Assertions.assertEquals(checkout.getCheckedOutTool().getBrand(), "Werner");
         Assertions.assertEquals(agreement.calculateDiscountAmount(), BigDecimal.valueOf(0.40).setScale(2, RoundingMode.HALF_UP));
         Assertions.assertEquals(checkout.getDiscount(), 10);
+        agreement.printRentalAgreement();
     }
 
     @Test
@@ -69,6 +70,7 @@ public class RentalAppTests {
         Assertions.assertEquals(checkout.getCheckedOutTool().getBrand(), "Stihl");
         Assertions.assertEquals(agreement.calculateDiscountAmount(), BigDecimal.valueOf(1.12).setScale(2, RoundingMode.HALF_UP));
         Assertions.assertEquals(checkout.getDiscount(), 25);
+        agreement.printRentalAgreement();
 
     }
 
@@ -93,6 +95,7 @@ public class RentalAppTests {
         Assertions.assertEquals(checkout.getCheckedOutTool().getBrand(), "DeWalt");
         Assertions.assertEquals(agreement.calculateDiscountAmount(), BigDecimal.valueOf(0.00).setScale(2, RoundingMode.HALF_UP));
         Assertions.assertEquals(checkout.getDiscount(), 0);
+        agreement.printRentalAgreement();
 
 
     }
@@ -119,6 +122,7 @@ public class RentalAppTests {
         Assertions.assertEquals(checkout.getCheckedOutTool().getBrand(), "Ridgid");
         Assertions.assertEquals(agreement.calculateDiscountAmount(), BigDecimal.valueOf(0.00).setScale(2, RoundingMode.HALF_UP));
         Assertions.assertEquals(checkout.getDiscount(), 0);
+        agreement.printRentalAgreement();
 
     }
 
@@ -143,6 +147,7 @@ public class RentalAppTests {
         Assertions.assertEquals(checkout.getCheckedOutTool().getBrand(), "Ridgid");
         Assertions.assertEquals(agreement.calculateDiscountAmount(), BigDecimal.valueOf(1.50).setScale(2, RoundingMode.HALF_UP));
         Assertions.assertEquals(checkout.getDiscount(), 50);
+        agreement.printRentalAgreement();
 
     }
 

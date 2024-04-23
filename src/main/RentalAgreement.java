@@ -13,7 +13,6 @@ public class RentalAgreement {
 
     public RentalAgreement(Checkout checkout) {
         this.checkout = checkout;
-        System.out.println(printRentalAgreement());
     }
 
     public LocalDate calculateDueDate() {
@@ -74,7 +73,7 @@ public class RentalAgreement {
         return BigDecimal.valueOf(preDiscountCharge().doubleValue() - calculateDiscountAmount().doubleValue()).setScale(2,RoundingMode.HALF_UP);
     }
 
-    public String printRentalAgreement() {
+    public void printRentalAgreement() {
         String id = checkout.getCheckout_id().toString();
         String code = checkout.getCheckedOutTool().getCode();
         String type = checkout.getCheckedOutTool().getType();
@@ -106,8 +105,10 @@ public class RentalAgreement {
                 Final Charge: %s
                 """;
 
-        return String.format(agreement, id, code, type, brand, rentalDays, checkOutDate,
+        String formattedString =  String.format(agreement, id, code, type, brand, rentalDays, checkOutDate,
                 dueDate, dailyCharge, chargeDays, preDiscount, discount, discountAmount, finalCharge);
+
+        System.out.println(formattedString);
 
     }
 
