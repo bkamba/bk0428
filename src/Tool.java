@@ -15,8 +15,6 @@ public class Tool {
      */
     public Tool(String code){
         this.code = code;
-//        this.brand = brand;
-//        this.type = type;
 
         switch (code) {
             case "JAKR" -> {
